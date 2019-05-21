@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<controls:ExContentPage
+    xmlns:controls="clr-namespace:MemoSaver.Controls" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MemoSaver.Views.LoginPage"
+    Title="Login"
+    >
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Label x:Name="labTitle" Text="Welcome to MemoSaver!" FontSize="Large" TextColor="#0000ff" HorizontalOptions="CenterAndExpand" />
+            <Label />
+            <StackLayout Orientation="Horizontal" Margin="20, 0">
+                <Label Text="Password: " FontSize="Default" TextColor="#555555" HorizontalOptions="Start" VerticalOptions="Center" />
+                <Entry x:Name="Password" Text="" IsPassword="True" HorizontalOptions="EndAndExpand" Placeholder="Password" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btnCancel" Text="Cancel" IsVisible="False" TextColor="#555555" Clicked="Cancel_Clicked" HorizontalOptions="StartAndExpand" />
+                <Button x:Name="btnLogin" Text="Login" TextColor="#555555" Clicked="Login_Clicked" HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</controls:ExContentPage>

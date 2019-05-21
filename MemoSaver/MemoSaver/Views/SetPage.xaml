@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<controls:ExContentPage
+    xmlns:controls="clr-namespace:MemoSaver.Controls" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MemoSaver.Views.SetPage"
+    Title="Settings"
+    >
+    <TableView Intent="Settings">
+        <TableRoot>
+
+            <TableSection Title="Login Password">
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Margin="5, 0">
+                        <Label Text="Password" HorizontalOptions="Start" />
+                        <Entry x:Name="Password" Text="" IsPassword="True" HorizontalOptions="EndAndExpand" Placeholder="Password" />
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Margin="5, 0">
+                        <Label Text="Need Login" HorizontalOptions="Start" />
+                        <Switch x:Name="IsLogin" IsToggled="False" HorizontalOptions="EndAndExpand" />
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="* If you lost your password, you will not be able to login again!" HorizontalOptions="StartAndExpand" TextColor="#888888"/>
+                    </StackLayout>
+                </ViewCell>
+            </TableSection>
+
+            <TableSection Title="Customize Extend Field Name">
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Margin="5, 0">
+                        <Label Text="Name" />
+                        <Label Text="Show" HorizontalOptions="EndAndExpand" />
+                    </StackLayout>
+                </ViewCell>
+
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Entry x:Name="Field01" Text="" HorizontalOptions="StartAndExpand" Placeholder="Field 01 Name" />
+                        <Switch x:Name="Field01S" IsToggled="False" HorizontalOptions="End" />
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Entry x:Name="Field02" Text="" HorizontalOptions="StartAndExpand" Placeholder="Field 02 Name" />
+                        <Switch x:Name="Field02S" IsToggled="False" HorizontalOptions="End" />
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Entry x:Name="Field03" Text="" HorizontalOptions="StartAndExpand" Placeholder="Field 03 Name" />
+                        <Switch x:Name="Field03S" IsToggled="False" HorizontalOptions="End" />
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Entry x:Name="Field04" Text="" HorizontalOptions="StartAndExpand" Placeholder="Field 04 Name" />
+                        <Switch x:Name="Field04S" IsToggled="False" HorizontalOptions="End" />
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Entry x:Name="Field05" Text="" HorizontalOptions="StartAndExpand" Placeholder="Field 04 Name" />
+                        <Switch x:Name="Field05S" IsToggled="False" HorizontalOptions="End" />
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Entry x:Name="Field06" Text="" HorizontalOptions="StartAndExpand" Placeholder="Field 06 Name" />
+                        <Switch x:Name="Field06S" IsToggled="False" HorizontalOptions="End" />
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Entry x:Name="Field07" Text="" HorizontalOptions="StartAndExpand" Placeholder="Field 07 Name" />
+                        <Switch x:Name="Field07S" IsToggled="False" HorizontalOptions="End" />
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Entry x:Name="Field08" Text="" HorizontalOptions="StartAndExpand" Placeholder="Field 08 Name" />
+                        <Switch x:Name="Field08S" IsToggled="False" HorizontalOptions="End" />
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Entry x:Name="Field09" Text="" HorizontalOptions="StartAndExpand" Placeholder="Field 09 Name" />
+                        <Switch x:Name="Field09S" IsToggled="False" HorizontalOptions="End" />
+                    </StackLayout>
+                </ViewCell>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Entry x:Name="Field10" Text="" HorizontalOptions="StartAndExpand" Placeholder="Field 10 Name" />
+                        <Switch x:Name="Field10S" IsToggled="False" HorizontalOptions="End" />
+                    </StackLayout>
+                </ViewCell>
+            </TableSection>
+
+            <TableSection Title="">
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Margin="5, 0">
+                        <Button Text="Restore" TextColor="#555555" Clicked="Cancel_Clicked" HorizontalOptions="StartAndExpand" />
+                        <Button Text="Save" TextColor="#555555" Clicked="Save_Clicked" HorizontalOptions="EndAndExpand" />
+                    </StackLayout>
+                </ViewCell>
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</controls:ExContentPage>

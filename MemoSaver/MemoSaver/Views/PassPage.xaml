@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<controls:ExContentPage
+    xmlns:controls="clr-namespace:MemoSaver.Controls" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:uuutils="clr-namespace:MemoSaver.uuUtils"
+    x:Class="MemoSaver.Views.PassPage"
+    Title="Generate Password"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <uuutils:InverseBoolConverter x:Key="inverseBool" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <StackLayout Orientation="Vertical" Margin="5, 0">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Password: " FontSize="Default" TextColor="#555555" HorizontalOptions="Start" VerticalOptions="Center" />
+                    <Entry x:Name="Password" Text="" BindingContext="{x:Reference Name=ShowPass}" IsPassword="{Binding Path=IsToggled, Converter={StaticResource inverseBool}}" HorizontalOptions="EndAndExpand" Placeholder="Generate Password" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Copy" TextColor="#555555" Clicked="Copy_Clicked" HorizontalOptions="StartAndExpand" />
+                    <Button Text="Generate" TextColor="#555555" Clicked="Gen_Clicked" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Minimum Length: " FontSize="Default" TextColor="#555555" LineBreakMode="NoWrap" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+                    <Entry x:Name="MinLen" WidthRequest="40" MaxLength="2" Keyboard="Numeric" Text="20" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Maximum Length: " FontSize="Default" TextColor="#555555" LineBreakMode="NoWrap" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+                    <Entry x:Name="MaxLen" WidthRequest="40" MaxLength="2" Keyboard="Numeric" Text="20" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Show Password: " FontSize="Default" TextColor="#555555" LineBreakMode="NoWrap" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+                    <Switch x:Name="ShowPass" IsToggled="True" HorizontalOptions="End" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Use Uppercase (A-Z): " FontSize="Default" TextColor="#555555" LineBreakMode="NoWrap" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+                    <Switch x:Name="ShowUpper" IsToggled="True" HorizontalOptions="End" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Use Lowercase (a-z): " FontSize="Default" TextColor="#555555" LineBreakMode="NoWrap" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+                    <Switch x:Name="ShowLower" IsToggled="True" HorizontalOptions="End" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Use Numbers (0-9): " FontSize="Default" TextColor="#555555" LineBreakMode="NoWrap" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+                    <Switch x:Name="ShowNumber" IsToggled="True" HorizontalOptions="End" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Use Special : " FontSize="Default" TextColor="#555555" LineBreakMode="NoWrap" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+                    <Switch x:Name="ShowSpecial" IsToggled="True" HorizontalOptions="End" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Entry x:Name="Special" Text="" HorizontalOptions="StartAndExpand" Placeholder="Special Characters" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="5, 0">
+                    <Button Text="Restore" TextColor="#555555" Clicked="Cancel_Clicked" HorizontalOptions="StartAndExpand" />
+                    <Button Text="Save" TextColor="#555555" Clicked="Save_Clicked" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</controls:ExContentPage>

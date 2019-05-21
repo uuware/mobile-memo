@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<controls:ExContentPage
+    xmlns:controls="clr-namespace:MemoSaver.Controls" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MemoSaver.Views.AddPage"
+    Title="Memo"
+             >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="toolBack" Text="Back" Clicked="OnBackClicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="Android, UWP" Value="back.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem x:Name="toolDel" Text="Del" Clicked="OnDeleteClicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="Android, UWP" Value="delete.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem x:Name="toolSave" Text="Save" Clicked="OnSaveClicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="Android, UWP" Value="save.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="5" VerticalOptions="StartAndExpand">
+
+                <Label x:Name="DoneT" Text="Done" />
+                <Switch x:Name="Done" IsToggled="{Binding Done}" />
+
+                <Label x:Name="NameT" Text="Title" />
+                <Entry x:Name="Name" Text="{Binding Title}" />
+                <Label x:Name="DateT" Text="Date" />
+                <DatePicker x:Name="Date" Format="D" />
+                <Label x:Name="NotesT" Text="Notes" />
+                <Editor x:Name="Notes" Text="{Binding Notes}" HeightRequest="120" />
+                <Label x:Name="IdsT" Text="Id" />
+                <Entry x:Name="Ids" Text="{Binding Ids}" />
+                <Label x:Name="PasswordT" Text="Password" />
+                <Entry x:Name="Password" Text="{Binding Password}" IsPassword="true" />
+                <Label x:Name="UrlT" Text="Url" />
+                <Entry x:Name="Url" Text="{Binding Url}" Keyboard="Url" />
+                <Label x:Name="EmailT" Text="Email" />
+                <Entry x:Name="Email" Text="{Binding Email}" Keyboard="Email" />
+                <Label x:Name="TelT" Text="Tel" />
+                <Entry x:Name="Tel" Text="{Binding Tel}" Keyboard="Telephone" />
+                <Label x:Name="CardT" Text="Card" />
+                <Entry x:Name="Card" Text="{Binding Card}" Keyboard="Numeric" />
+
+                <Label x:Name="FieldT01" Text="FieldT01" />
+                <Entry x:Name="Field01" Text="{Binding Field01}" />
+                <Label x:Name="FieldT02" Text="FieldT02" />
+                <Entry x:Name="Field02" Text="{Binding Field02}" />
+                <Label x:Name="FieldT03" Text="FieldT03" />
+                <Entry x:Name="Field03" Text="{Binding Field03}" />
+                <Label x:Name="FieldT04" Text="FieldT04" />
+                <Entry x:Name="Field04" Text="{Binding Field04}" />
+                <Label x:Name="FieldT05" Text="FieldT05" />
+                <Entry x:Name="Field05" Text="{Binding Field05}" />
+                <Label x:Name="FieldT06" Text="FieldT06" />
+                <Entry x:Name="Field06" Text="{Binding Field06}" />
+                <Label x:Name="FieldT07" Text="FieldT07" />
+                <Entry x:Name="Field07" Text="{Binding Field07}" />
+                <Label x:Name="FieldT08" Text="FieldT08" />
+                <Entry x:Name="Field08" Text="{Binding Field08}" />
+                <Label x:Name="FieldT09" Text="FieldT09" />
+                <Entry x:Name="Field09" Text="{Binding Field09}" />
+                <Label x:Name="FieldT10" Text="FieldT10" />
+                <Entry x:Name="Field10" Text="{Binding Field10}" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</controls:ExContentPage>

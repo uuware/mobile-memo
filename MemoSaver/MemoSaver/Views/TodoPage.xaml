@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<controls:ExContentPage
+    xmlns:controls="clr-namespace:MemoSaver.Controls" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:uuutils="clr-namespace:MemoSaver.uuUtils"
+    x:Class="MemoSaver.Views.TodoPage"
+    Title="Todo Tasks"
+    >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <uuutils:InverseBoolConverter x:Key="inverseBool" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="OnItemAdded">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="Android, UWP" Value="add.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="listView" Margin="5" ItemSelected="OnListItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding Title}" FontSize="Default" TextColor="#555555" LineBreakMode="NoWrap" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Active" IsVisible="{Binding Done, Converter={StaticResource inverseBool}}" FontSize="Default" TextColor="#00ff00" LineBreakMode="NoWrap" HorizontalOptions="Start" VerticalOptions="Center" />
+                                    <Label Text="Done" IsVisible="{Binding Done}" FontSize="Default" TextColor="#888888" LineBreakMode="NoWrap" HorizontalOptions="Start" VerticalOptions="Center" />
+                                    <Label Text="{Binding Time, StringFormat='Modified: {0}'}" FontSize="Micro" TextColor="#aaaaaa" LineBreakMode="NoWrap" HorizontalOptions="EndAndExpand" VerticalOptions="Start" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout x:Name="labNodata" Margin="10" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Label Text="(No Memo)" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</controls:ExContentPage>
